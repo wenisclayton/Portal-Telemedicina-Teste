@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Portal.TM.Business.Models;
+using Portal.TM.Business.Entities;
+
 #pragma warning disable CS8618
 
 namespace Portal.TM.Data.Context;
@@ -17,7 +18,7 @@ public class MyDbContext : DbContext
                          .Where(p => p.ClrType == typeof(string))))
             property.SetColumnType("varchar(100)");
 
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(MyDbContext).Assembly);
+        //modelBuilder.ApplyConfigurationsFromAssembly(typeof(MyDbContext).Assembly);
 
         foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys())) relationship.DeleteBehavior = DeleteBehavior.ClientSetNull;
 

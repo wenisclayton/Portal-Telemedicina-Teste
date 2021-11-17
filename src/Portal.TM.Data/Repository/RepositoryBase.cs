@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
+using Portal.TM.Business.Entities;
 using Portal.TM.Business.Interfaces;
-using Portal.TM.Business.Models;
 using Portal.TM.Data.Context;
 
 namespace Portal.TM.Data.Repository;
