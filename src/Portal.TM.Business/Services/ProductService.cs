@@ -1,6 +1,6 @@
 ﻿using AspNetCore.IQueryable.Extensions;
+using Portal.TM.Business.Entities;
 using Portal.TM.Business.Interfaces;
-using Portal.TM.Business.Models;
 using Portal.TM.Business.Notifications;
 
 namespace Portal.TM.Business.Services;

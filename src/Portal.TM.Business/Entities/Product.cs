@@ -1,7 +1,6 @@
 ﻿using Bogus;
-using Bogus.DataSets;
 
-namespace Portal.TM.Business.Models;
+namespace Portal.TM.Business.Entities;
 public class Product : BaseEntity
 {
     public string Name { get; set; }

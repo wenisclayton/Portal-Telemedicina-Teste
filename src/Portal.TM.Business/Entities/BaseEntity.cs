@@ -1,4 +1,4 @@
-﻿namespace Portal.TM.Business.Models;
+﻿namespace Portal.TM.Business.Entities;
 
 public class BaseEntity
 {
