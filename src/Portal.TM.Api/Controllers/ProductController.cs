@@ -2,8 +2,8 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Portal.TM.Api.ViewModels;
+using Portal.TM.Business.Entities;
 using Portal.TM.Business.Interfaces;
-using Portal.TM.Business.Models;
 using Portal.TM.Business.Notifications;
 using Portal.TM.Business.Services;
 

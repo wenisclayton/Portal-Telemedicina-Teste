@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Portal.TM.Api.ViewModels;
-using Portal.TM.Business.Models;
+using Portal.TM.Business.Entities;
 
 namespace Portal.TM.Api.Configuration;
 public static class AutomapperConfiguration
