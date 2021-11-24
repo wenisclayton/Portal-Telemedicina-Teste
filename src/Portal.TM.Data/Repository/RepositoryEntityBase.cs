@@ -1,4 +1,5 @@
 ﻿using System.Linq.Expressions;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Portal.TM.Business.Entities;
 using Portal.TM.Business.Interfaces;
@@ -6,12 +7,12 @@ using Portal.TM.Data.Context;
 
 namespace Portal.TM.Data.Repository;
 
-public abstract class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : BaseEntity, new()
+public abstract class RepositoryEntityBase<TEntity> : IRepositoryEntityBase<TEntity> where TEntity : IdentityUser<Guid>, new()
 {
-    protected readonly MyDbContext Db;
+    protected readonly MyIdentityDbContext Db;
     protected readonly DbSet<TEntity> DbSet;
 
-    protected RepositoryBase(MyDbContext db)
+    protected RepositoryEntityBase(MyIdentityDbContext db)
     {
         Db = db;
         DbSet = db.Set<TEntity>();

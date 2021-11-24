@@ -1,4 +1,5 @@
 ﻿using Bogus;
+using Portal.TM.Business.Extentions;
 
 namespace Portal.TM.Business.Entities;
 public class Product : BaseEntity
@@ -23,7 +24,8 @@ public class Product : BaseEntity
 
     public static Faker<Product> Get()
     {
-        return new Faker<Product>().CustomInstantiator(f =>
-            new Product(f.Commerce.ProductName(), f.Commerce.ProductDescription(), f.Finance.Amount(1, 10000,2)));
+        var retorno = new Faker<Product>().CustomInstantiator(f =>
+            new Product(f.Commerce.ProductName().Truncate(100), f.Commerce.ProductDescription().Truncate(100), f.Finance.Amount(1, 10000, 2)));
+        return retorno;
     }
 }

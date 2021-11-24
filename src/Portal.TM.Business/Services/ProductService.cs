@@ -49,6 +49,10 @@ public class ProductService : BaseService, IProductService
         }
     }
 
+    /// <summary>
+    /// generate objects fake
+    /// </summary>
+    /// <returns></returns>
     private async Task CheckProduct()
     {
         if (_productRepository.Queryable().Any())

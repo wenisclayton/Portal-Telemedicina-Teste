@@ -1,5 +1,4 @@
-﻿using AspNetCore.IQueryable.Extensions;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Portal.TM.Api.ViewModels;
 using Portal.TM.Business.Entities;
@@ -8,6 +7,8 @@ using Portal.TM.Business.Notifications;
 using Portal.TM.Business.Services;
 
 namespace Portal.TM.Api.Controllers;
+
+[Route("api/product")]
 public class ProductController : MainBaseController
 {
     private readonly IMapper _mapper;
@@ -49,9 +50,7 @@ public class ProductController : MainBaseController
         return ResponsePost(nameof(Post), new { name = productRegister.Name }, newUser);
     }
 
-    /// <summary>
-    /// Update an Applicant
-    /// </summary>
+
     [HttpPut("{id}")]
     public async Task<ActionResult> Put(Guid id, [FromBody] ProductRegister productUpdate)
     {

@@ -18,7 +18,7 @@ namespace Portal.TM.Api.Configuration
                 options.UseSqlServer(config.GetConnectionString("DefaultConnection")));
 
 
-            services.AddDefaultIdentity<MyUser>()
+            services.AddDefaultIdentity<MyUser>(options => { options.User.RequireUniqueEmail = true; })
                 .AddEntityFrameworkStores<MyIdentityDbContext>()
                 .AddDefaultTokenProviders();
 

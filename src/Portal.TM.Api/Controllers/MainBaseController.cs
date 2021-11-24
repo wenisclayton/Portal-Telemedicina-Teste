@@ -1,15 +1,19 @@
-﻿using Portal.TM.Business.Interfaces;
+﻿using Microsoft.AspNetCore.Authorization;
+using Portal.TM.Business.Entities;
+using Portal.TM.Business.Interfaces;
 using Portal.TM.Business.Notifications;
 
 namespace Portal.TM.Api.Controllers;
 
+[Authorize]
 [ApiController]
 public abstract class MainBaseController : ControllerBase
 {
     private readonly DomainNotificationHandler _notifications;
     private readonly IDomainNotificationMediatorService _mediator;
 
-    protected MainBaseController(INotificationHandler<DomainNotification> notifications,
+    protected MainBaseController(
+        INotificationHandler<DomainNotification> notifications,
         IDomainNotificationMediatorService mediator)
     {
         _notifications = (DomainNotificationHandler)notifications;

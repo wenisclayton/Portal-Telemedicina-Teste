@@ -2,15 +2,17 @@
 using AspNetCore.IQueryable.Extensions.Filter;
 using AspNetCore.IQueryable.Extensions.Pagination;
 using AspNetCore.IQueryable.Extensions.Sort;
-#pragma warning disable CS8618
 
 namespace Portal.TM.Api.ViewModels;
-public class ProductSearch : IQueryPaging, IQuerySort
+
+public class UserSearch : IQueryPaging, IQuerySort
 {
-    public string? Name { get; set; }
+    [FromQuery(Name = "Name User")]
+    public string? UserName { get; set; }
+    public string? Email { get; set; }
+    
     [QueryOperator(Operator = WhereOperator.Contains)]
-    public string? Description { get; set; }
-    public decimal? Price { get; set; }
+    public string? FullName { get; set; }
     
     [FromQuery(Name = "Data Creation Start")]
     public DateTime? DateCreationStart { get; set; }
